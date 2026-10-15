@@ -4,6 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akashi Store | Katalog Akun Mobile Legends</title>
+  /* Gerakan logo lebih terlihat */
+.hero-logo {
+  animation: akashiFloat 3s ease-in-out infinite;
+}
+
+@keyframes akashiFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-24px) rotate(2deg);
+  }
+}
+
+/* Hilangkan efek muncul pada teks */
+.hero-content {
+  animation: none;
+}
+
+/* Cahaya tombol berdenyut */
+.hero-button {
+  animation: akashiGlow 2s ease-in-out infinite;
+}
+
+@keyframes akashiGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(233, 22, 70, 0.25);
+  }
+
+  50% {
+    box-shadow: 0 0 28px rgba(233, 22, 70, 0.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo,
+  .hero-content,
+  .hero-button {
+    animation: none;
+  }
+}
 
   <style>
     :root {
