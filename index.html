@@ -4,62 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akashi Store | Katalog Akun Mobile Legends</title>
-  /* Logo bergerak naik-turun */
-.hero-logo {
-  animation: logoFloat 4s ease-in-out infinite;
-}
-
-@keyframes logoFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-/* Teks muncul ketika halaman dibuka */
-.hero-content {
-  animation: contentEnter 0.8s ease-out;
-}
-
-@keyframes contentEnter {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Efek tombol saat disentuh kursor */
-.hero-button {
-  transition: background 0.2s, transform 0.2s;
-}
-
-@media (hover: hover) {
-  .hero-button:hover {
-    transform: translateY(-3px);
-  }
-}
-
-/* Mengikuti pengaturan pengguna yang mengurangi gerakan */
-@media (prefers-reduced-motion: reduce) {
-  .hero-logo,
-  .hero-content {
-    animation: none;
-  }
-
-  .hero-button {
-    transition: none;
-  }
-
-  .hero-button:hover {
-    transform: none;
-  }
-}
 
   <style>
     :root {
@@ -67,6 +11,7 @@
       --surface: #131318;
       --accent: #e91646;
       --accent-hover: #c8103a;
+      --highlight: #ff6385;
       --text: #fafafa;
       --muted: #c4c4ce;
       --border: #353039;
@@ -87,6 +32,7 @@
       color: var(--text);
     }
 
+    /* HEADER DAN NAVIGASI */
     .site-header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -99,22 +45,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 20px;
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      color: var(--text);
+      color: var(--highlight);
       font-size: 24px;
       font-weight: bold;
       text-decoration: none;
-    }
-
-    .brand span {
-      color: #ff6385;
     }
 
     .brand img {
@@ -135,20 +77,23 @@
     }
 
     .nav-links a {
+      display: inline-block;
+      padding: 6px 0;
       color: var(--text);
       text-decoration: none;
       transition: color 0.2s;
     }
 
     .nav-links a:hover {
-      color: #ff6385;
+      color: var(--highlight);
     }
 
     a:focus-visible {
-      outline: 3px solid #ff6385;
+      outline: 3px solid var(--highlight);
       outline-offset: 5px;
     }
 
+    /* BAGIAN HOME */
     .hero {
       max-width: 1100px;
       min-height: 70vh;
@@ -168,10 +113,11 @@
     .hero-content {
       flex: 1;
       min-width: 0;
+      animation: contentEnter 0.8s ease-out;
     }
 
     .hero-label {
-      color: #ff6385;
+      color: var(--highlight);
       font-weight: bold;
       letter-spacing: 2px;
     }
@@ -183,7 +129,7 @@
     }
 
     .hero h1 span {
-      color: #ff6385;
+      color: var(--highlight);
     }
 
     .hero-description {
@@ -202,7 +148,10 @@
       color: #ffffff;
       font-weight: bold;
       text-decoration: none;
-      transition: background 0.2s;
+      transition:
+        background 0.2s,
+        transform 0.2s,
+        box-shadow 0.2s;
     }
 
     .hero-button:hover {
@@ -224,8 +173,42 @@
       border-radius: 50%;
       flex-shrink: 0;
       box-shadow: 0 0 45px rgba(233, 22, 70, 0.2);
+      animation: logoFloat 4s ease-in-out infinite;
     }
 
+    /* ANIMASI TEKS */
+    @keyframes contentEnter {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ANIMASI LOGO */
+    @keyframes logoFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    /* EFEK TOMBOL PADA PERANGKAT DENGAN KURSOR */
+    @media (hover: hover) {
+      .hero-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(233, 22, 70, 0.3);
+      }
+    }
+
+    /* TAMPILAN TABLET DAN PONSEL */
     @media (max-width: 760px) {
       .hero {
         flex-direction: column;
@@ -262,14 +245,24 @@
       }
     }
 
+    /* MENGIKUTI PENGATURAN PENGURANGAN GERAKAN */
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
       }
 
+      .hero-content,
+      .hero-logo {
+        animation: none;
+      }
+
       .nav-links a,
       .hero-button {
         transition: none;
+      }
+
+      .hero-button:hover {
+        transform: none;
       }
     }
   </style>
@@ -279,7 +272,12 @@
   <header class="site-header">
     <nav class="navbar" aria-label="Navigasi utama">
       <a class="brand" href="#home">
-        <img src="logo.jpeg" alt="" width="64" height="64">
+        <img
+          src="logo.jpeg"
+          alt=""
+          width="64"
+          height="64"
+        >
         <span>Akashi Store</span>
       </a>
 
@@ -293,6 +291,7 @@
   </header>
 
   <main>
+    <!-- HOME: BAGIAN ANDA -->
     <section id="home" class="hero" aria-labelledby="hero-title">
       <div class="hero-content">
         <p class="hero-label">AKASHI STORE</p>
@@ -327,13 +326,13 @@
       >
     </section>
 
-    <!-- Anggota 2: tambahkan section dengan id="about" di sini. -->
+    <!-- ANGGOTA 2: Tambahkan section id="about" di sini. -->
 
-    <!-- Anggota 3: tambahkan section dengan id="catalog" di sini. -->
+    <!-- ANGGOTA 3: Tambahkan section id="catalog" di sini. -->
 
-    <!-- Anggota 4: tambahkan section dengan id="contact" di sini. -->
+    <!-- ANGGOTA 4: Tambahkan section id="contact" di sini. -->
   </main>
 
-  <!-- Anggota 4: tambahkan footer di sini. -->
+  <!-- ANGGOTA 4: Tambahkan footer di sini. -->
 </body>
 </html>
