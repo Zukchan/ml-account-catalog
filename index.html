@@ -5,6 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akashi Store | Katalog Akun Mobile Legends</title>
 
+  /* Kilau bergerak pada tulisan Pilihanmu */
+.hero h1 span {
+  color: var(--highlight);
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .hero h1 span {
+    background: linear-gradient(
+      110deg,
+      #ff6385 0%,
+      #ff6385 35%,
+      #ffffff 50%,
+      #ff6385 65%,
+      #ff6385 100%
+    );
+    background-size: 250% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: akashiTextShine 4s linear infinite;
+  }
+}
+
+@keyframes akashiTextShine {
+  from {
+    background-position: 200% center;
+  }
+
+  to {
+    background-position: -50% center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 span {
+    animation: none;
+    background: none;
+    color: var(--highlight);
+  }
+}
+
   <style>
     :root {
       --background: #09090c;
