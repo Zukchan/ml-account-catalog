@@ -6,6 +6,16 @@
   <title>Akashi Store | Katalog Akun Mobile Legends</title>
 
   <style>
+    :root {
+      --background: #09090c;
+      --surface: #131318;
+      --accent: #e91646;
+      --accent-hover: #c8103a;
+      --text: #fafafa;
+      --muted: #c4c4ce;
+      --border: #353039;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -17,13 +27,13 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0b1120;
-      color: #f8fafc;
+      background: var(--background);
+      color: var(--text);
     }
 
     .site-header {
-      background: #111827;
-      border-bottom: 1px solid #334155;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
     }
 
     .navbar {
@@ -41,10 +51,14 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      color: #fbbf24;
+      color: var(--text);
       font-size: 24px;
       font-weight: bold;
       text-decoration: none;
+    }
+
+    .brand span {
+      color: #ff6385;
     }
 
     .brand img {
@@ -65,16 +79,17 @@
     }
 
     .nav-links a {
-      color: #e2e8f0;
+      color: var(--text);
       text-decoration: none;
+      transition: color 0.2s;
     }
 
     .nav-links a:hover {
-      color: #fbbf24;
+      color: #ff6385;
     }
 
     a:focus-visible {
-      outline: 3px solid #fbbf24;
+      outline: 3px solid #ff6385;
       outline-offset: 5px;
     }
 
@@ -87,6 +102,11 @@
       align-items: center;
       justify-content: space-between;
       gap: 48px;
+      background: radial-gradient(
+        ellipse at right,
+        rgba(233, 22, 70, 0.12),
+        transparent 65%
+      );
     }
 
     .hero-content {
@@ -95,7 +115,7 @@
     }
 
     .hero-label {
-      color: #fbbf24;
+      color: #ff6385;
       font-weight: bold;
       letter-spacing: 2px;
     }
@@ -107,12 +127,12 @@
     }
 
     .hero h1 span {
-      color: #fbbf24;
+      color: #ff6385;
     }
 
     .hero-description {
       max-width: 580px;
-      color: #cbd5e1;
+      color: var(--muted);
       font-size: 18px;
       line-height: 1.8;
     }
@@ -122,19 +142,20 @@
       margin-top: 20px;
       padding: 15px 26px;
       border-radius: 10px;
-      background: #fbbf24;
-      color: #111827;
+      background: var(--accent);
+      color: #ffffff;
       font-weight: bold;
       text-decoration: none;
+      transition: background 0.2s;
     }
 
     .hero-button:hover {
-      background: #fcd34d;
+      background: var(--accent-hover);
     }
 
     .hero-note {
       margin-top: 24px;
-      color: #94a3b8;
+      color: #aaa4b0;
       font-size: 14px;
       line-height: 1.6;
     }
@@ -146,6 +167,7 @@
       height: auto;
       border-radius: 50%;
       flex-shrink: 0;
+      box-shadow: 0 0 45px rgba(233, 22, 70, 0.2);
     }
 
     @media (max-width: 760px) {
@@ -187,6 +209,11 @@
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
+      }
+
+      .nav-links a,
+      .hero-button {
+        transition: none;
       }
     }
   </style>
