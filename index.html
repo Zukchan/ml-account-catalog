@@ -4,48 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akashi Store | Katalog Akun Mobile Legends</title>
-  /* Gerakan logo lebih terlihat */
-.hero-logo {
-  animation: akashiFloat 3s ease-in-out infinite;
-}
-
-@keyframes akashiFloat {
-  0%, 100% {
-    transform: translateY(0) rotate(-2deg);
-  }
-
-  50% {
-    transform: translateY(-24px) rotate(2deg);
-  }
-}
-
-/* Hilangkan efek muncul pada teks */
-.hero-content {
-  animation: none;
-}
-
-/* Cahaya tombol berdenyut */
-.hero-button {
-  animation: akashiGlow 2s ease-in-out infinite;
-}
-
-@keyframes akashiGlow {
-  0%, 100% {
-    box-shadow: 0 0 8px rgba(233, 22, 70, 0.25);
-  }
-
-  50% {
-    box-shadow: 0 0 28px rgba(233, 22, 70, 0.7);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-logo,
-  .hero-content,
-  .hero-button {
-    animation: none;
-  }
-}
 
   <style>
     :root {
@@ -102,6 +60,7 @@
     }
 
     .brand img {
+      display: block;
       width: 64px;
       height: 64px;
       object-fit: contain;
@@ -135,7 +94,7 @@
       outline-offset: 5px;
     }
 
-    /* BAGIAN HOME */
+    /* HOME */
     .hero {
       max-width: 1100px;
       min-height: 70vh;
@@ -155,7 +114,6 @@
     .hero-content {
       flex: 1;
       min-width: 0;
-      animation: contentEnter 0.8s ease-out;
     }
 
     .hero-label {
@@ -190,10 +148,8 @@
       color: #ffffff;
       font-weight: bold;
       text-decoration: none;
-      transition:
-        background 0.2s,
-        transform 0.2s,
-        box-shadow 0.2s;
+      transition: background 0.2s, transform 0.2s;
+      animation: akashiGlow 2s ease-in-out infinite;
     }
 
     .hero-button:hover {
@@ -215,42 +171,38 @@
       border-radius: 50%;
       flex-shrink: 0;
       box-shadow: 0 0 45px rgba(233, 22, 70, 0.2);
-      animation: logoFloat 4s ease-in-out infinite;
+      animation: akashiFloat 3s ease-in-out infinite;
     }
 
-    /* ANIMASI TEKS */
-    @keyframes contentEnter {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* ANIMASI LOGO */
-    @keyframes logoFloat {
+    /* LOGO NAIK-TURUN DAN SEDIKIT MIRING */
+    @keyframes akashiFloat {
       0%, 100% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(-2deg);
       }
 
       50% {
-        transform: translateY(-12px);
+        transform: translateY(-24px) rotate(2deg);
       }
     }
 
-    /* EFEK TOMBOL PADA PERANGKAT DENGAN KURSOR */
+    /* CAHAYA TOMBOL BERDENYUT */
+    @keyframes akashiGlow {
+      0%, 100% {
+        box-shadow: 0 0 8px rgba(233, 22, 70, 0.25);
+      }
+
+      50% {
+        box-shadow: 0 0 28px rgba(233, 22, 70, 0.7);
+      }
+    }
+
     @media (hover: hover) {
       .hero-button:hover {
         transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(233, 22, 70, 0.3);
       }
     }
 
-    /* TAMPILAN TABLET DAN PONSEL */
+    /* TABLET DAN PONSEL */
     @media (max-width: 760px) {
       .hero {
         flex-direction: column;
@@ -293,8 +245,8 @@
         scroll-behavior: auto;
       }
 
-      .hero-content,
-      .hero-logo {
+      .hero-logo,
+      .hero-button {
         animation: none;
       }
 
@@ -333,7 +285,7 @@
   </header>
 
   <main>
-    <!-- HOME: BAGIAN ANDA -->
+    <!-- HOME DAN NAVIGASI: BAGIAN ANDA -->
     <section id="home" class="hero" aria-labelledby="hero-title">
       <div class="hero-content">
         <p class="hero-label">AKASHI STORE</p>
