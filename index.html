@@ -29,7 +29,7 @@
     .navbar {
       max-width: 1100px;
       margin: auto;
-      padding: 22px 24px;
+      padding: 18px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -38,10 +38,21 @@
     }
 
     .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
       color: #fbbf24;
       font-size: 24px;
       font-weight: bold;
       text-decoration: none;
+    }
+
+    .brand img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      border-radius: 50%;
+      flex-shrink: 0;
     }
 
     .nav-links {
@@ -71,13 +82,16 @@
       max-width: 1100px;
       min-height: 70vh;
       margin: auto;
-      padding: 90px 24px;
+      padding: 80px 24px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 48px;
     }
 
     .hero-content {
-      max-width: 720px;
+      flex: 1;
+      min-width: 0;
     }
 
     .hero-label {
@@ -88,7 +102,7 @@
 
     .hero h1 {
       margin: 18px 0;
-      font-size: clamp(36px, 6vw, 64px);
+      font-size: clamp(36px, 5vw, 60px);
       line-height: 1.12;
     }
 
@@ -125,6 +139,30 @@
       line-height: 1.6;
     }
 
+    .hero-logo {
+      display: block;
+      width: 34%;
+      max-width: 360px;
+      height: auto;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: auto;
+        padding: 50px 24px;
+      }
+
+      .hero-logo {
+        width: 65%;
+        max-width: 280px;
+        align-self: center;
+      }
+    }
+
     @media (max-width: 600px) {
       .navbar {
         align-items: flex-start;
@@ -136,9 +174,13 @@
         font-size: 14px;
       }
 
-      .hero {
-        min-height: auto;
-        padding: 60px 24px;
+      .brand {
+        font-size: 22px;
+      }
+
+      .brand img {
+        width: 52px;
+        height: 52px;
       }
     }
 
@@ -153,7 +195,10 @@
 <body>
   <header class="site-header">
     <nav class="navbar" aria-label="Navigasi utama">
-      <a class="brand" href="#home">Akashi Store</a>
+      <a class="brand" href="#home">
+        <img src="logo.jpeg" alt="" width="64" height="64">
+        <span>Akashi Store</span>
+      </a>
 
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
@@ -189,6 +234,14 @@
           Seluruh data akun yang digunakan bersifat fiktif.
         </p>
       </div>
+
+      <img
+        class="hero-logo"
+        src="logo.jpeg"
+        alt="Logo Akashi Store"
+        width="1254"
+        height="1254"
+      >
     </section>
 
     <!-- Anggota 2: tambahkan section dengan id="about" di sini. -->
