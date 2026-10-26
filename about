@@ -1,0 +1,230 @@
+
+<!-- ANGGOTA 2: ABOUT -->
+<section id="about" class="about-section">
+  <div class="about-container">
+
+    <div class="about-heading">
+      <p class="about-label">ABOUT US</p>
+      <h2>Tentang <span>Akashi Store</span></h2>
+      <p class="about-intro">
+        Kenali kami lebih dekat dan temukan akun Mobile Legends
+        yang sesuai dengan gaya bermainmu.
+      </p>
+    </div>
+
+    <div class="about-content">
+      <div class="about-image">
+        <img src="logo.jpeg" alt="Logo Akashi Store">
+      </div>
+
+      <div class="about-description">
+        <h3>Tempat Menemukan Akun Impianmu</h3>
+        <p>
+          Akashi Store merupakan website katalog akun Mobile Legends
+          yang dirancang untuk memudahkan pengunjung dalam melihat
+          berbagai pilihan akun berdasarkan rank, koleksi hero,
+          skin, dan harga.
+        </p>
+        <p>
+          Melalui website ini, pengunjung dapat mengenal detail
+          setiap akun dan membandingkan pilihan yang tersedia
+          sesuai dengan preferensi dan anggaran masing-masing.
+        </p>
+        <p>
+          Kami menghadirkan tampilan yang sederhana, modern,
+          dan mudah digunakan agar pengalaman menjelajahi katalog
+          menjadi lebih nyaman.
+        </p>
+
+        <a href="#catalog" class="about-button">
+          Jelajahi Katalog →
+        </a>
+      </div>
+    </div>
+
+    <div class="about-features">
+      <div class="about-card">
+        <h3>01</h3>
+        <h4>Pilihan Beragam</h4>
+        <p>Temukan variasi akun dengan rank dan koleksi yang berbeda.</p>
+      </div>
+
+      <div class="about-card">
+        <h3>02</h3>
+        <h4>Informasi Jelas</h4>
+        <p>Lihat detail akun untuk membantu menentukan pilihan.</p>
+      </div>
+
+      <div class="about-card">
+        <h3>03</h3>
+        <h4>Mudah Digunakan</h4>
+        <p>Navigasi sederhana untuk pengalaman browsing yang nyaman.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ABOUT SECTION */
+  .about-section {
+    padding: 80px 24px;
+    background: #0e0e13;
+    color: #fafafa;
+    border-top: 1px solid #353039;
+  }
+
+  .about-container {
+    max-width: 1160px;
+    margin: auto;
+  }
+
+  .about-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px;
+  }
+
+  .about-label {
+    color: #ff6385;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+  }
+
+  .about-heading h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    margin: 12px 0;
+  }
+
+  .about-heading h2 span {
+    color: #ff6385;
+  }
+
+  .about-intro {
+    color: #c4c4ce;
+    line-height: 1.8;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 55px;
+    margin-bottom: 55px;
+  }
+
+  .about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border: 1px solid #353039;
+    border-radius: 20px;
+    background: #141419;
+  }
+
+  .about-image img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 35px rgba(233, 22, 70, 0.2);
+  }
+
+  .about-description h3 {
+    font-size: 26px;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 18px;
+  }
+
+  .about-description p {
+    color: #c4c4ce;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 15px;
+  }
+
+  .about-button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 14px 22px;
+    border-radius: 9px;
+    background: #e91646;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+
+  .about-button:hover {
+    background: #c8103a;
+    transform: translateY(-2px);
+  }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .about-card {
+    padding: 25px;
+    border: 1px solid #353039;
+    border-radius: 15px;
+    background: #141419;
+    transition: 0.2s;
+  }
+
+  .about-card:hover {
+    border-color: #ff6385;
+    transform: translateY(-5px);
+  }
+
+  .about-card h3 {
+    margin: 0 0 15px;
+    color: #ff6385;
+    font-size: 28px;
+  }
+
+  .about-card h4 {
+    margin: 0 0 10px;
+    font-size: 18px;
+  }
+
+  .about-card p {
+    margin: 0;
+    color: #c4c4ce;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 800px) {
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .about-image img {
+      max-width: 230px;
+    }
+
+    .about-features {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-button,
+    .about-card {
+      transition: none;
+    }
+
+    .about-button:hover,
+    .about-card:hover {
+      transform: none;
+    }
+  }
+</style>
