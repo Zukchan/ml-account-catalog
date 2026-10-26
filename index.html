@@ -833,6 +833,20 @@
   </div>
 </article>
 
+    <script>
+  document.querySelectorAll(".catalog-gallery").forEach(gallery => {
+    const track = gallery.querySelector(".catalog-track");
+
+    gallery.querySelector(".gallery-next").addEventListener("click", () => {
+      track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
+    });
+
+    gallery.querySelector(".gallery-prev").addEventListener("click", () => {
+      track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
+    });
+  });
+</script>
+
     <!-- ANGGOTA 4: Tambahkan section id="contact" di sini. -->
   </main>
 
