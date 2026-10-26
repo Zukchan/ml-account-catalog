@@ -1393,6 +1393,43 @@
 
   </div>
 </section>
+    <script>
+  document.querySelectorAll(".catalog-gallery").forEach((gallery) => {
+    const track = gallery.querySelector(".catalog-track");
+    const next = gallery.querySelector(".gallery-next");
+    const prev = gallery.querySelector(".gallery-prev");
+
+    next.addEventListener("click", () => {
+      track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
+    });
+
+    prev.addEventListener("click", () => {
+      track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
+    });
+
+    let isDragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+
+    track.addEventListener("mousedown", (event) => {
+      isDragging = true;
+      startX = event.pageX;
+      startScrollLeft = track.scrollLeft;
+    });
+
+    window.addEventListener("mouseup", () => {
+      isDragging = false;
+    });
+
+    track.addEventListener("mousemove", (event) => {
+      if (!isDragging) return;
+
+      event.preventDefault();
+      const distance = event.pageX - startX;
+      track.scrollLeft = startScrollLeft - distance;
+    });
+  });
+</script>
 
     <!-- Section Kontak -->
 <section id="contact" class="contact-section">
