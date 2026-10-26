@@ -301,9 +301,62 @@
         padding: 30px 6% 18px;
     }
 }
-  .catalog-gallery {
-  position: relative;
+  /* KATALOG AKUN */
+.catalog-section {
+  padding: 78px 24px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(233, 22, 70, 0.10), transparent 55%),
+    #09090c;
+}
+
+.catalog-container {
+  max-width: 1160px;
+  margin: auto;
+}
+
+.catalog-heading {
+  max-width: 680px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.catalog-eyebrow {
+  margin: 0 0 11px;
+  color: var(--highlight);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.catalog-heading h2 {
+  margin: 0 0 12px;
+  font-size: clamp(28px, 4vw, 40px);
+}
+
+.catalog-heading p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.catalog-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  max-width: 920px;
+  margin: auto;
   overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: linear-gradient(145deg, #19171c, #111115);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+}
+
+.catalog-gallery {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: #08080b;
 }
 
 .catalog-track {
@@ -326,31 +379,171 @@
 .catalog-slide img {
   display: block;
   width: 100%;
-  height: 220px;
+  height: 100%;
+  min-height: 330px;
+  max-height: 430px;
   object-fit: cover;
+}
+
+.catalog-photo-label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 99, 133, 0.35);
+  border-radius: 999px;
+  background: rgba(9, 9, 12, 0.78);
+  color: #fff;
+  font-size: 12px;
 }
 
 .gallery-button {
   position: absolute;
   top: 50%;
   z-index: 2;
-  width: 36px;
-  height: 36px;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(9, 9, 12, 0.8);
-  color: white;
-  font-size: 22px;
-  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
   transform: translateY(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  background: rgba(9, 9, 12, 0.78);
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.gallery-button:hover {
+  border-color: var(--accent);
+  background: var(--accent);
 }
 
 .gallery-prev {
-  left: 10px;
+  left: 14px;
 }
 
 .gallery-next {
-  right: 10px;
+  right: 14px;
+}
+
+.catalog-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 34px;
+}
+
+.catalog-status {
+  align-self: flex-start;
+  margin: 0 0 14px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(233, 22, 70, 0.13);
+  color: var(--highlight);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.catalog-info h3 {
+  margin: 0 0 10px;
+  font-size: 25px;
+}
+
+.catalog-caption {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.catalog-specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 24px;
+}
+
+.catalog-spec {
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: rgba(9, 9, 12, 0.48);
+}
+
+.catalog-spec dt {
+  margin-bottom: 6px;
+  color: #aaa4b0;
+  font-size: 11px;
+}
+
+.catalog-spec dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.catalog-price {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.catalog-price strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--highlight);
+  font-size: 24px;
+}
+
+.catalog-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 12px 18px;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.catalog-button:hover {
+  background: var(--accent-hover);
+}
+
+.catalog-disclaimer {
+  max-width: 920px;
+  margin: 18px auto 0;
+  color: #aaa4b0;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .catalog-section {
+    padding: 58px 20px;
+  }
+
+  .catalog-card {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-slide img {
+    min-height: 240px;
+    max-height: 340px;
+  }
+
+  .catalog-info {
+    padding: 25px 22px;
+  }
 }
     /* ABOUT */
 .about-section {
@@ -1102,45 +1295,94 @@
 </section>
 
     <!-- ANGGOTA 3: Tambahkan section id="catalog" di sini. -->
-<article class="catalog-card">
-  <div class="catalog-gallery">
-    <button class="gallery-button gallery-prev" type="button" aria-label="Foto sebelumnya">
-      ‹
-    </button>
-
-    <div class="catalog-track">
-      <div class="catalog-slide">
-        <img src="akun-ars.jpeg" alt="Foto profil akun Mobile Legends">
-      </div>
-      <div class="catalog-slide">
-        <img src="koleksi-skin.jpeg" alt="Foto koleksi skin akun Mobile Legends">
-      </div>
+<section
+  id="catalog"
+  class="catalog-section"
+  aria-labelledby="catalog-title"
+>
+  <div class="catalog-container">
+    <div class="catalog-heading">
+      <p class="catalog-eyebrow">Katalog Akun</p>
+      <h2 id="catalog-title">Pilih akun yang kamu suka</h2>
+      <p>
+        Lihat foto dan informasi akun, lalu hubungi kami
+        jika ingin bertanya lebih lanjut.
+      </p>
     </div>
 
-    <button class="gallery-button gallery-next" type="button" aria-label="Foto berikutnya">
-      ›
-    </button>
+    <article class="catalog-card">
+      <div class="catalog-gallery" aria-label="Galeri foto akun">
+        <span class="catalog-photo-label">Foto akun</span>
+
+        <button
+          class="gallery-button gallery-prev"
+          type="button"
+          aria-label="Foto sebelumnya"
+        >
+          &#8249;
+        </button>
+
+        <div class="catalog-track">
+          <div class="catalog-slide">
+            <img src="akun-ars.jpeg" alt="Tampilan akun Mobile Legends">
+          </div>
+
+          <div class="catalog-slide">
+            <img src="koleksi-skin.jpeg" alt="Koleksi skin akun Mobile Legends">
+          </div>
+        </div>
+
+        <button
+          class="gallery-button gallery-next"
+          type="button"
+          aria-label="Foto berikutnya"
+        >
+          &#8250;
+        </button>
+      </div>
+
+      <div class="catalog-info">
+        <p class="catalog-status">Akun pilihan</p>
+        <h3>Akun Mobile Legends</h3>
+        <p class="catalog-caption">
+          Informasi akun dapat dilengkapi sesuai detail akun yang ditawarkan.
+        </p>
+
+        <dl class="catalog-specs">
+          <div class="catalog-spec">
+            <dt>Rank</dt>
+            <dd>Isi rank akun</dd>
+          </div>
+          <div class="catalog-spec">
+            <dt>Jumlah hero</dt>
+            <dd>Isi jumlah hero</dd>
+          </div>
+          <div class="catalog-spec">
+            <dt>Jumlah skin</dt>
+            <dd>Isi jumlah skin</dd>
+          </div>
+          <div class="catalog-spec">
+            <dt>Server</dt>
+            <dd>Isi server akun</dd>
+          </div>
+        </dl>
+
+        <p class="catalog-price">
+          Harga akun
+          <strong>Isi harga akun</strong>
+        </p>
+
+        <a class="catalog-button" href="#contact">
+          Tanya akun <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </article>
+
+    <p class="catalog-disclaimer">
+      Ganti teks “Isi ...” dengan data akun yang sesuai.
+    </p>
   </div>
-
-  <div class="catalog-info">
-    <h3>Akun Mobile Legends</h3>
-    <a class="catalog-button" href="#contact">Tanya Akun</a>
-  </div>
-</article>
-
-    <script>
-  document.querySelectorAll(".catalog-gallery").forEach(gallery => {
-    const track = gallery.querySelector(".catalog-track");
-
-    gallery.querySelector(".gallery-next").addEventListener("click", () => {
-      track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
-    });
-
-    gallery.querySelector(".gallery-prev").addEventListener("click", () => {
-      track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
-    });
-  });
-</script>
+</section>
 
     <!-- Section Kontak -->
 <section id="contact" class="contact-section">
