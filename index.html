@@ -6,6 +6,102 @@
   <title>Akashi Store | Katalog Akun Mobile Legends</title>
 
   <style>
+    /* ABOUT */
+.about-section {
+  padding: 82px 24px;
+  background:
+    radial-gradient(ellipse at 15% 50%, rgba(233, 22, 70, 0.12), transparent 45%),
+    #101014;
+}
+
+.about-container {
+  max-width: 1160px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 56px;
+}
+
+.about-label {
+  margin: 0 0 14px;
+  color: var(--highlight);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.about-content h2 {
+  margin: 0 0 20px;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.2;
+}
+
+.about-content h2 span {
+  color: var(--highlight);
+}
+
+.about-content p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.about-card {
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #1b171c, #121216);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+.about-card h3 {
+  margin: 0 0 18px;
+  font-size: 18px;
+}
+
+.about-points {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.about-check {
+  display: inline-grid;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(233, 22, 70, 0.16);
+  color: var(--highlight);
+  font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-section {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+}
     :root {
       --background: #09090c;
       --surface: #141419;
@@ -611,7 +707,53 @@
       </div>
     </section>
 
-    <!-- ANGGOTA 2: Tambahkan section id="about" di sini. -->
+   <section id="about" class="about-section" aria-labelledby="about-title">
+  <div class="about-container">
+    <div class="about-content">
+      <p class="about-label">Tentang Akashi Store</p>
+
+      <h2 id="about-title">
+        Temukan pilihan akun yang
+        <span>cocok untukmu.</span>
+      </h2>
+
+      <p>
+        Akashi Store adalah website katalog akun Mobile Legends yang
+        membantu pengunjung melihat pilihan akun berdasarkan rank,
+        koleksi hero, skin, dan harga.
+      </p>
+
+      <p>
+        Setiap akun ditampilkan dengan informasi yang mudah dipahami
+        agar kamu dapat membandingkan pilihan sebelum menentukan akun
+        yang paling sesuai dengan kebutuhan dan anggaranmu.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <h3>Yang bisa kamu lihat di Akashi Store</h3>
+
+      <ul class="about-points">
+        <li>
+          <span class="about-check" aria-hidden="true">✓</span>
+          <span>Informasi rank pada setiap akun.</span>
+        </li>
+        <li>
+          <span class="about-check" aria-hidden="true">✓</span>
+          <span>Rincian koleksi hero dan skin.</span>
+        </li>
+        <li>
+          <span class="about-check" aria-hidden="true">✓</span>
+          <span>Harga untuk membantu membandingkan pilihan.</span>
+        </li>
+        <li>
+          <span class="about-check" aria-hidden="true">✓</span>
+          <span>Tampilan katalog yang nyaman dibuka melalui ponsel maupun komputer.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
     <!-- ANGGOTA 3: Tambahkan section id="catalog" di sini. -->
 
