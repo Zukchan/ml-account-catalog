@@ -6,6 +6,95 @@
   <title>Akashi Store | Katalog Akun Mobile Legends</title>
 
   <style>
+    
+/* =========================
+   FOOTER AKASHI STORE
+========================= */
+.site-footer {
+    background: #060608;
+    color: #c4c4ce;
+    padding: 35px 8% 20px;
+    border-top: 1px solid #353039;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    max-width: 420px;
+}
+
+.footer-brand h3 {
+    color: #fafafa;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.footer-brand h3 span {
+    color: #e91646;
+}
+
+.footer-brand p {
+    color: #c4c4ce;
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+.footer-nav h4 {
+    color: #fafafa;
+    font-size: 1rem;
+    margin-bottom: 14px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 10px;
+}
+
+.footer-nav a {
+    color: #c4c4ce;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #ff6385;
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 28px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid #353039;
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+/* Tampilan HP */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 30px 6% 18px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
     /* =========================
    SECTION KONTAK
 ========================= */
@@ -1107,6 +1196,38 @@
 </section>
   </main>
 
-  <!-- ANGGOTA 4: Tambahkan footer di sini. -->
+  
+<!-- Footer Akashi Store -->
+<footer class="site-footer">
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <h3>Akashi <span>Store</span></h3>
+            <p>
+                Katalog akun Mobile Legends untuk menemukan
+                pilihan sesuai kebutuhanmu.
+            </p>
+        </div>
+
+        <div class="footer-nav">
+            <h4>Navigasi</h4>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#catalog">Katalog Akun</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>
+            &copy; 2026 Mini Project Catalyst.
+            Akashi Store — Semua hak dilindungi.
+        </p>
+    </div>
+</footer>
+
 </body>
 </html>
