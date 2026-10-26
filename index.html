@@ -784,46 +784,44 @@
 </section>
 
     <!-- ANGGOTA 3: Tambahkan section id="catalog" di sini. -->
-<article class="catalog-card">
-  <div class="catalog-gallery">
-    <button class="gallery-button gallery-prev" type="button" aria-label="Foto sebelumnya">
-      ‹
-    </button>
+<section class="section" id="catalog">
+  <h2 class="section-title">Catalog</h2>
+  <p class="section-subtitle">Geser foto untuk melihat foto lainnya.</p>
 
-    <div class="catalog-track">
-      <div class="catalog-slide">
-        <img src="akun-ars.jpeg" alt="Foto profil akun Mobile Legends">
+  <div class="catalog-grid">
+    <!-- Satu akun = satu kartu. Kedua foto ada di kartu yang sama. -->
+    <article class="catalog-card">
+      <div class="catalog-gallery">
+        <button
+          class="gallery-button gallery-prev"
+          type="button"
+          aria-label="Foto sebelumnya"
+        >‹</button>
+
+        <div class="gallery-track">
+          <img src="akun-ars.jpeg" alt="Foto akun Mobile Legends">
+          <img src="koleksi-skin.jpeg" alt="Koleksi skin akun Mobile Legends">
+        </div>
+
+        <button
+          class="gallery-button gallery-next"
+          type="button"
+          aria-label="Foto berikutnya"
+        >›</button>
       </div>
-      <div class="catalog-slide">
-        <img src="koleksi-skin.jpeg" alt="Foto koleksi skin akun Mobile Legends">
+
+      <div class="catalog-info">
+        <h3>Akun Mobile Legends</h3>
+        <a
+          class="contact-button"
+          href="https://wa.me/628xxxxxxxxxx"
+          target="_blank"
+          rel="noopener"
+        >Tanya Akun</a>
       </div>
-    </div>
-
-    <button class="gallery-button gallery-next" type="button" aria-label="Foto berikutnya">
-      ›
-    </button>
+    </article>
   </div>
-
-  <div class="catalog-info">
-    <h3>Akun Mobile Legends</h3>
-    <a class="catalog-button" href="#contact">Tanya Akun</a>
-  </div>
-</article>
-
-    <script>
-  document.querySelectorAll(".catalog-gallery").forEach(gallery => {
-    const track = gallery.querySelector(".catalog-track");
-
-    gallery.querySelector(".gallery-next").addEventListener("click", () => {
-      track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
-    });
-
-    gallery.querySelector(".gallery-prev").addEventListener("click", () => {
-      track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
-    });
-  });
-</script>
-
+</section>
     <!-- ANGGOTA 4: Tambahkan section id="contact" di sini. -->
   </main>
 
