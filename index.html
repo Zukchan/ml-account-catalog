@@ -350,27 +350,63 @@
   border-radius: 20px;
   background: linear-gradient(145deg, #19171c, #111115);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
-  <div class="catalog-list" id="catalog-list">
+ 
+}
+    .catalog-list {
+  display: flex;
+  gap: 24px;
+  padding: 4px 0 26px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
 
-  <article class="catalog-card">
-    ... isi kartu akun 1 ...
-  </article>
+.catalog-list::-webkit-scrollbar {
+  display: none;
+}
 
-  <article class="catalog-card">
-    ... isi kartu akun 2 ...
-  </article>
+.catalog-list > .catalog-card {
+  flex: 0 0 min(920px, 88%);
+  margin: 0;
+  scroll-snap-align: start;
+}
 
-  <article class="catalog-card">
-    ... isi kartu akun 3 ...
-  </article>
+.catalog-track {
+  overscroll-behavior-x: contain;
+}
 
-</div>
+.catalog-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
 
-<div class="catalog-nav">
-  <button class="catalog-nav-button" id="catalog-prev" type="button" aria-label="Akun sebelumnya">&#8249;</button>
-  <span class="catalog-nav-count" id="catalog-count">1 / 3</span>
-  <button class="catalog-nav-button" id="catalog-next" type="button" aria-label="Akun berikutnya">&#8250;</button>
-</div>
+.catalog-nav-button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  background: rgba(9, 9, 12, 0.78);
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.catalog-nav-button:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.catalog-nav-count {
+  min-width: 48px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .catalog-gallery {
@@ -1336,28 +1372,146 @@
 >
   <div class="catalog-container">
     <div class="catalog-heading">
-      <section id="catalog" class="catalog-section" aria-labelledby="catalog-title">
-  <div class="catalog-container">
-
-    <div class="catalog-heading">
       <p class="catalog-eyebrow">Katalog Akun</p>
       <h2 id="catalog-title">Pilih akun yang kamu suka</h2>
-      <p>Lihat foto dan informasi akun, lalu hubungi kami jika ingin bertanya lebih lanjut.</p>
+      <p>
+        Lihat foto dan informasi akun, lalu hubungi kami
+        jika ingin bertanya lebih lanjut.
+      </p>
     </div>
 
-    <!-- ▼ MULAI: tambahkan pembungkus ini ▼ -->
     <div class="catalog-list" id="catalog-list">
 
+      <!-- AKUN 1 -->
       <article class="catalog-card">
-        ... kartu akun 1 (yang sudah ada) ...
+        <div class="catalog-gallery" aria-label="Galeri foto akun">
+          <span class="catalog-photo-label">Foto akun</span>
+
+          <button class="gallery-button gallery-prev" type="button" aria-label="Foto sebelumnya">&#8249;</button>
+
+          <div class="catalog-track">
+            <div class="catalog-slide">
+              <img src="slide1.jpeg" alt="Tampilan akun Mobile Legends">
+            </div>
+            <div class="catalog-slide">
+              <img src="slide2.jpeg" alt="Koleksi skin akun Mobile Legends">
+            </div>
+          </div>
+
+          <button class="gallery-button gallery-next" type="button" aria-label="Foto berikutnya">&#8250;</button>
+        </div>
+
+        <div class="catalog-info">
+          <p class="catalog-status">Akun pilihan</p>
+          <h3>Akun Mobile Legends</h3>
+          <p class="catalog-caption">
+            Informasi akun dapat dilengkapi sesuai detail akun yang ditawarkan.
+          </p>
+
+          <dl class="catalog-specs">
+            <div class="catalog-spec"><dt>Rank Tertinggi</dt><dd>MYTHIC GLORY 67</dd></div>
+            <div class="catalog-spec"><dt>Jumlah Hero</dt><dd>133</dd></div>
+            <div class="catalog-spec"><dt>Jumlah Skin</dt><dd>167</dd></div>
+            <div class="catalog-spec"><dt>Server</dt><dd>18024</dd></div>
+          </dl>
+
+          <p class="catalog-price">
+            Harga akun
+            <strong>RP.250.000</strong>
+          </p>
+
+          <a class="catalog-button" href="#contact">
+            Tanya akun <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
       </article>
 
+      <!-- AKUN 2 -->
       <article class="catalog-card">
-        ... kartu akun 2 ...
+        <div class="catalog-gallery" aria-label="Galeri foto akun">
+          <span class="catalog-photo-label">Foto akun</span>
+
+          <button class="gallery-button gallery-prev" type="button" aria-label="Foto sebelumnya">&#8249;</button>
+
+          <div class="catalog-track">
+            <div class="catalog-slide">
+              <img src="slide1.jpeg" alt="Tampilan akun Mobile Legends">
+            </div>
+            <div class="catalog-slide">
+              <img src="slide2.jpeg" alt="Koleksi skin akun Mobile Legends">
+            </div>
+          </div>
+
+          <button class="gallery-button gallery-next" type="button" aria-label="Foto berikutnya">&#8250;</button>
+        </div>
+
+        <div class="catalog-info">
+          <p class="catalog-status">Akun pilihan</p>
+          <h3>Akun Mobile Legends #2</h3>
+          <p class="catalog-caption">
+            Informasi akun dapat dilengkapi sesuai detail akun yang ditawarkan.
+          </p>
+
+          <dl class="catalog-specs">
+            <div class="catalog-spec"><dt>Rank Tertinggi</dt><dd>(isi rank)</dd></div>
+            <div class="catalog-spec"><dt>Jumlah Hero</dt><dd>(isi jumlah)</dd></div>
+            <div class="catalog-spec"><dt>Jumlah Skin</dt><dd>(isi jumlah)</dd></div>
+            <div class="catalog-spec"><dt>Server</dt><dd>(isi server)</dd></div>
+          </dl>
+
+          <p class="catalog-price">
+            Harga akun
+            <strong>RP.000.000</strong>
+          </p>
+
+          <a class="catalog-button" href="#contact">
+            Tanya akun <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
       </article>
 
+      <!-- AKUN 3 -->
       <article class="catalog-card">
-        ... kartu akun 3 ...
+        <div class="catalog-gallery" aria-label="Galeri foto akun">
+          <span class="catalog-photo-label">Foto akun</span>
+
+          <button class="gallery-button gallery-prev" type="button" aria-label="Foto sebelumnya">&#8249;</button>
+
+          <div class="catalog-track">
+            <div class="catalog-slide">
+              <img src="slide1.jpeg" alt="Tampilan akun Mobile Legends">
+            </div>
+            <div class="catalog-slide">
+              <img src="slide2.jpeg" alt="Koleksi skin akun Mobile Legends">
+            </div>
+          </div>
+
+          <button class="gallery-button gallery-next" type="button" aria-label="Foto berikutnya">&#8250;</button>
+        </div>
+
+        <div class="catalog-info">
+          <p class="catalog-status">Akun pilihan</p>
+          <h3>Akun Mobile Legends #3</h3>
+          <p class="catalog-caption">
+            Informasi akun dapat dilengkapi sesuai detail akun yang ditawarkan.
+          </p>
+
+          <dl class="catalog-specs">
+            <div class="catalog-spec"><dt>Rank Tertinggi</dt><dd>(isi rank)</dd></div>
+            <div class="catalog-spec"><dt>Jumlah Hero</dt><dd>(isi jumlah)</dd></div>
+            <div class="catalog-spec"><dt>Jumlah Skin</dt><dd>(isi jumlah)</dd></div>
+            <div class="catalog-spec"><dt>Server</dt><dd>(isi server)</dd></div>
+          </dl>
+
+          <p class="catalog-price">
+            Harga akun
+            <strong>RP.000.000</strong>
+          </p>
+
+          <a class="catalog-button" href="#contact">
+            Tanya akun <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
       </article>
 
     </div>
@@ -1367,7 +1521,6 @@
       <span class="catalog-nav-count" id="catalog-count">1 / 3</span>
       <button class="catalog-nav-button" id="catalog-next" type="button" aria-label="Akun berikutnya">&#8250;</button>
     </div>
-    <!-- ▲ SELESAI ▲ -->
 
   </div>
 </section>
@@ -1449,6 +1602,27 @@
 
   </div>
 </section>
+    <script>
+  (function () {
+    const list = document.getElementById("catalog-list");
+    const count = document.getElementById("catalog-count");
+    const cards = list.querySelectorAll(".catalog-card");
+    const step = () => cards[0].offsetWidth + 24;
+
+    document.getElementById("catalog-next").addEventListener("click", () => {
+      list.scrollBy({ left: step(), behavior: "smooth" });
+    });
+
+    document.getElementById("catalog-prev").addEventListener("click", () => {
+      list.scrollBy({ left: -step(), behavior: "smooth" });
+    });
+
+    list.addEventListener("scroll", () => {
+      const i = Math.round(list.scrollLeft / step());
+      count.textContent = (Math.min(i, cards.length - 1) + 1) + " / " + cards.length;
+    });
+  })();
+</script>
     <script>
   (function () {
     const list = document.getElementById("catalog-list");
